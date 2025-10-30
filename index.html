@@ -1,0 +1,193 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Renda Extra Relâmpago com IA — Mini Curso Gratuito</title>
+  <meta name="description" content="Mini curso gratuito que mostra como usar ferramentas de Inteligência Artificial para criar uma fonte de renda extra, mesmo começando do zero." />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#000000; --accent:#00ff6a9f; --muted:#a6b4c3; --card:#071026; --glass: rgba(255,255,255,0.04);
+      --maxw:1100px;
+      --radius:14px;
+    }
+    *{box-sizing:border-box}
+    body{font-family:'Poppins',system-ui,Segoe UI,Roboto,Helvetica,Arial; margin:0; background:linear-gradient(180deg,var(--bg),#061024); color:#fff; -webkit-font-smoothing:antialiased}
+    .wrap{max-width:var(--maxw); margin:36px auto; padding:28px}
+    header.hero{display:grid; grid-template-columns:1fr 420px; gap:28px; align-items:center}
+    @media(max-width:920px){header.hero{grid-template-columns:1fr; padding:18px}}
+    .kicker{display:inline-block; background:var(--glass); padding:8px 12px; border-radius:999px; color:var(--accent); font-weight:600; margin-bottom:12px}
+    h1{font-size:30px; margin:0 0 12px; line-height:1.05}
+    p.lead{color:var(--muted); margin:0 0 20px}
+    .cta-row{display:flex; gap:12px; align-items:center}
+    .btn{background:var(--accent); color:#00101a; padding:14px 18px; border-radius:12px; font-weight:700; text-decoration:none; display:inline-block}
+    .btn.ghost{background:transparent; border:1px solid rgba(255,255,255,0.06); color:#fff}
+    .card{background:linear-gradient(180deg,rgba(255,255,255,0.02), rgba(255,255,255,0.01)); padding:20px; border-radius:12px; box-shadow:0 6px 30px rgba(0,0,0,0.5);}
+
+    /* right column */
+    .signup{background:linear-gradient(180deg,#021022,#071226); padding:20px; border-radius:12px}
+    .signup h3{margin:0 0 8px}
+    .input{width:100%; padding:12px; margin-bottom:10px; border-radius:10px; border:1px solid rgba(255,255,255,0.06); background:transparent; color:#fff}
+    form small{color:var(--muted)}
+
+    /* sections */
+    section{margin:28px 0}
+    .grid-3{display:grid; grid-template-columns:repeat(3,1fr); gap:16px}
+    @media(max-width:920px){.grid-3{grid-template-columns:1fr}}
+    .feature{padding:16px; border-radius:12px; background:var(--card)}
+
+    .story{display:flex; gap:16px; align-items:center} /* centraliza verticalmente imagem e texto */
+    .avatar{
+      width:92px;
+      height:92px;
+      border-radius:12px;
+      background:linear-gradient(135deg,var(--accent),#6fe0ff); /* fallback */
+      flex-shrink:0;
+      overflow:hidden; /* corta a imagem ao redor do border-radius */
+      display:block;
+    }
+    .avatar__img{
+      width:100%;
+      height:100%;
+      object-fit:cover; /* encaixa e corta mantendo proporção */
+      display:block;
+    }
+
+    .testimonials{display:grid; grid-template-columns:repeat(2,1fr); gap:12px}
+    @media(max-width:700px){.testimonials{grid-template-columns:1fr}}
+    .testi{background:var(--card); padding:14px; border-radius:10px}
+
+    footer{color:var(--muted); font-size:13px; padding:18px 0}
+    .disclaimer{font-size:12px; color:#9fb0c7}
+
+    /* small helpers */
+    .badge{display:inline-block; padding:6px 10px; border-radius:8px; background:#062433; color:var(--accent); font-weight:700}
+
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header class="hero">
+      <div>
+        <span class="kicker">Mini curso gratuito</span>
+        <h1>💡 Renda Extra Relâmpago com IA: aprenda a transformar ferramentas de Inteligência Artificial em renda — mesmo começando do zero</h1>
+        <p class="lead">Uma aula objetiva com o passo a passo prático para você identificar oportunidades, montar serviços digitais simples e começar a monetizar usando IA — sem falsas promessas.</p>
+        <div class="cta-row">
+          <a class="btn" href="https://youtu.be/uzixBMeUOXw?si=0A98nwvZK1iNNgUz">Quero aprender agora</a>
+          <a class="btn ghost" href="#conteudo">Ver o conteúdo</a>
+        </div>
+
+        <section style="margin-top:22px">
+          <div class="card">
+            <div style="display:flex; gap:12px; align-items:center">
+              <div style="flex:1">
+                <strong>O que você recebe</strong>
+                <p style="margin:6px 0 0; color:var(--muted)">Acesso à aula gravada + material de apoio e checklist para começar a vender serviços com IA.</p>
+              </div>
+              <div style="text-align:right">
+                <span class="badge">Acesso 100% vitálicio</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+      </div>
+
+      <aside class="signup card" id="signup">
+        <h3>Garanta seu acesso</h3>
+        <p style="color:var(--muted); margin-top:6px">Preencha abaixo e receba o link da aula diretamente por e-mail.</p>
+        <form id="leadForm" onsubmit="return handleSubmit(event)">
+          <input class="input" type="text" id="name" placeholder="Seu nome" required />
+          <input class="input" type="email" id="email" placeholder="Seu melhor e-mail" required />
+          <button class="btn" type="submit">Quero meu acesso gratuito</button>
+          <small style="display:block; margin-top:8px">Sem spam — conteúdo 100% educativo. Terminologia e resultados variam conforme esforço.</small>
+        </form>
+      </aside>
+    </header>
+
+    <main>
+      <section id="conteudo">
+        <h2 style="margin-bottom:12px">📘 O que você vai aprender</h2>
+        <div class="grid-3">
+          <div class="feature">
+            <strong>Ferramentas práticas</strong>
+            <p style="color:var(--muted); margin-top:8px">Como usar ChatGPT, geradores de imagem e automações para criar entregáveis vendáveis.</p>
+          </div>
+          <div class="feature">
+            <strong>Modelos de serviços</strong>
+            <p style="color:var(--muted); margin-top:8px">5 ideias de serviços simples pra oferecer como freelance ou produto digital.</p>
+          </div>
+          <div class="feature">
+            <strong>Venda & entrega</strong>
+            <p style="color:var(--muted); margin-top:8px">Como organizar processos, precificar e entregar sem precisar de infraestrutura complexa.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="story">
+        <div class="avatar">
+          <img class="avatar__img" src="https://images.pexels.com/photos/17146202/pexels-photo-17146202.jpeg?_gl=1*fskrij*_ga*MjA1MTA2ODk0LjE3NjE3OTU5NzU.*_ga_8JE65Q40S6*czE3NjE3OTU5NzQkbzEkZzEkdDE3NjE3OTU5ODYkajQ4JGwwJGgw"alt="">
+        </div>
+        <div>
+          <h3>Eu também comecei do zero</h3>
+          <p style="color:var(--muted)">Não era expert em programação — comecei testando ideias simples com IA. Aprendi processos repetíveis que hoje uso para criar novos fluxos de renda. Neste mini curso, mostro exatamente o que eu faço, passo a passo.</p>
+        </div>
+      </section>
+
+      <section>
+        <h2>🚀 Depoimentos</h2>
+        <div class="testimonials">
+          <div class="testi">
+            <strong>Ana P.</strong>
+            <p style="color:var(--muted); margin-top:8px">"Eu nunca tinha usado IA antes, e já consegui montar meu primeiro serviço digital. A aula foi direta e prática."</p>
+          </div>
+          <div class="testi">
+            <strong>Lucas S.</strong>
+            <p style="color:var(--muted); margin-top:8px">"Método simples e aplicável — perfeito pra quem quer começar sem gastar muito."</p>
+          </div>
+        </div>
+      </section>
+
+      <section style="margin-top:24px">
+        <div class="card">
+          <h3>⚡ Garanta seu acesso gratuito</h3>
+          <p style="color:var(--muted)">A aula está disponível praticamente de graça por tempo limitado! Preencha seu e-mail e eu envio o link agora.</p>
+          <a class="btn" href="#signup" style="margin-top:12px; display:inline-block">Quero acessar a aula</a>
+        </div>
+      </section>
+
+      <section style="margin-top:18px">
+        <p class="disclaimer">Este conteúdo é educativo e não garante resultados financeiros. Os resultados variam de acordo com o esforço individual e a aplicação prática do conteúdo.</p>
+      </section>
+
+    </main>
+
+    <footer>
+      <div style="display:flex; justify-content:space-between; align-items:center; gap:12px; flex-wrap:wrap">
+        <div>
+          <strong></strong>
+          <div style="color:var(--muted)">Método Renda Extra Relâmpago com IA</div>
+        </div>
+        <div style="text-align:right">
+          <div style="color:var(--muted)">Termos de uso • Política de Privacidade</div>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    function handleSubmit(e){
+      e.preventDefault();
+      const name = document.getElementById('name').value.trim();
+      const email = document.getElementById('email').value.trim();
+      if(!email) return alert('Coloque seu e-mail');
+      // placeholder: enviar para sua API / serviço de email
+      // Ex: fetch('/subscribe', {method:'POST', body: JSON.stringify({name,email})})
+      alert('Obrigado! Em instantes você receberá o link da aula no e-mail — este é um protótipo.');
+      document.getElementById('leadForm').reset();
+      return false;
+    }
+  </script>
+</body>
+</html>
